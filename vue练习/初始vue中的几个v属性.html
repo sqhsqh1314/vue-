@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+	</head>
+	<style>
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+	
+	<body>
+		<div id="app">
+			<p v-text="hh1">{{msg}}</p>
+			<p v-cloak>{{hh1}}</p>
+			<p v-html="h5"></p>
+		</div>	
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				msg:"欢迎学习vue",
+				hh1:"hello world",
+				h5:'<h1>你好啊</h1>'
+			}
+		});		
+	</script>
+</html>

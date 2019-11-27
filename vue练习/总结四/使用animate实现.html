@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/animate.css" />
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title>wwrw</title>
+	</head>
+	<body>
+		<div class="div1">
+			<input type="button" value="点击" @click="flag=!flag" />
+			<!--
+            	作者：2761726520@qq.com
+            	时间：2019-08-06
+            	描述：第一种方式
+            -->
+			<transition enter-active-class="animated zoomIn" leave-active-class="animated zoomInUp" :duration="{enter:200,leave:400}">
+				<h3 v-if="flag">这是131</h3>
+			</transition>
+			
+            <transition
+            	enter-active-class="animated zoomIn";
+            	leave-active-class="animated zoomInUp";
+            	:duration="{enter:200,leave:400}">
+            	
+            </transition>
+           
+		</div>
+		
+	</body>
+	<script>
+		var vm=new Vue({
+			el:".div1",
+			data:{
+				flag:true,
+						
+			}
+		})
+		
+	</script>
+</html>

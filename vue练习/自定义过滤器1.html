@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<title></title>
+		<style>
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<p>{{ msg|myfrom1('邪恶')}}</p>
+		</div>
+	</body>
+	<script>
+		/*
+		 * 注意不能把全局过滤器的值写在vue实例的后面
+		 */
+		Vue.filter('myfrom1',function (msg,arg){
+			return msg.replace(/单纯/g,arg)
+			
+		})
+		
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				msg:'我是一个单纯的男生，单纯的我一直以为我是你爸爸'
+			}
+		})
+		
+	</script>
+</html>

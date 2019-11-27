@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+			<!--
+            	作者：2761726520@qq.com
+            	时间：2019-08-04
+            	描述：遍历数组
+            -->
+			<p v-for="(user,i) in list">id:{{user.id}}---名字：{{user.name}}---索引：{{i}}</p>
+			<!--
+            	作者：2761726520@qq.com
+            	时间：2019-08-04
+            	描述：遍历对象
+            -->
+            <p v-for="(val,key,i) in userr">值是：{{userr.id}}--名字是：{{userr.name}}---索引是：{{i}}</p>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:".div1",
+			data:{
+				list:[
+				{id:1,name:'adadh'},
+				{id:2,name:'ada234'},
+				{id:3,name:'ad4dh'},
+				{id:4,name:'ad345'}				
+				],
+				userr:{
+					id:1,
+					name:'王力阿达的',
+					gender:'男'
+					
+				}
+			}
+		})
+	</script>
+</html>

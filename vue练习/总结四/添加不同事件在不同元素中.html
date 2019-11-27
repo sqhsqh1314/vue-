@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+		<style>
+			.s-enter,
+			.s-leave-to{
+				
+				transform: translateX(10px);
+				opacity: 0;
+				
+			}
+			.s-enter-active, .s-leave-active
+			{
+				
+				transition: all 0.8s ease;
+			}
+			.s1-enter,
+			.s1-leave-to{
+				
+				transform: translateY(10px);
+				opacity: 0;
+				
+			}
+			.s1-enter-active, .s1-leave-active
+			{
+				
+				transition: all 0.8s ease;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<input type="button" value="显示" @click="flag=!flag" /><br />
+			<transition name="s">
+				<h3 v-if="flag">fafasf</h3>
+				
+			</transition>
+			<input type="button" value="展示"  @click="flag1=!flag1" />
+			<transition name="s1">
+				<h3 v-if="flag1">afafafafajjiiii</h3>				
+			</transition>			
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:".div1",
+			data:{
+				flag:true,
+				flag1:true				
+			}
+		})
+		
+	</script>
+</html>

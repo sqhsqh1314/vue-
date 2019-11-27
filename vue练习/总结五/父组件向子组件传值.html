@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+	</head>
+	<body>
+		<div class="div1">
+			<com1 :parentmsg="msg"></com1>
+			
+		</div>
+		<template id="com">
+			<h1>342----这是父组件的数据{{parentmsg}}</h1>
+			
+		</template>
+			
+		
+		
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				msg:"你好啊，你是我的某某啊"
+			},
+			methods:{
+				
+			},
+			components:{
+				com1:{
+					template:"#com",
+					props:['parentmsg'],
+					//如果要改变就通过change方法
+					methods:{
+						change(){
+							this.parentmsg='修改成功'
+						}
+					}
+					
+				},
+				
+				
+			}
+			
+		})
+		
+	</script>
+</html>

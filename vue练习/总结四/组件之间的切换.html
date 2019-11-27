@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<a @click.prevent="flag=true" href="">登录</a>
+			<a @click.prevent="flag=false" href="">注册</a>
+			<siyou v-if="flag"></siyou>
+			<siyou1 v-else="flag"></siyou1>
+		</div>
+		<template id="tt">
+			
+			
+			<h1>这是全局的私有属性</h1>
+			
+		</template>
+		<template id="tt1">
+		
+			<h1>这是全局的私有属性2</h1>
+			
+		</template>
+		
+	</body>
+	<script>
+		 Vue.component('siyou',{
+        	template:'#tt'
+        })
+		
+		Vue.component('siyou1',{
+        	template:'#tt1'
+        })
+		
+		var vm=new Vue({
+			el:'#div1',
+			data:{
+				flag:false
+				
+			},
+//			components:{
+//				siyou:{
+//					template:"#tt"
+//				},
+//				siyou1:{
+//					template:"#tt1"
+//				}
+			
+		})
+		
+	</script>
+</html>

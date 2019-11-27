@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+	</head>
+	<body>
+		<!--<input type="button" id="app" value="点击" v-bind:title="'请进行点击操作'+mgs"/>-->
+			<input type="button" id="app" value="点击" :title="'请进行点击操作'+mgs"/>
+		
+	</body>
+	<script>
+		
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				mgs:"你好啊！"
+				
+			}
+		})
+	</script>
+</html>

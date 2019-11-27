@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+			<tem @funn="show"></tem>
+			
+		</div>
+		<template id="app">
+			<div>
+			<h2>ffafaf</h2>
+			<br />
+			<input type="button" @click="myclick" value="点击"/>
+			</div>
+		</template>
+	</body>
+	<script>
+		//定义一个自变量类型的模板组件
+		var tem={
+			template:"#app",
+			data(){
+				return{
+					sonmsg:{name:'小儿子',age:6}
+				}
+				
+			},
+			methods:{
+				myclick(){
+					this.$emit('funn',this.sonmsg)
+					
+				}
+			}
+		}
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				datamsgfromjson:null
+				
+			},
+			methods:{
+				show(e){
+				console.log(e)
+				this.datamsgfromjson=e
+					
+				}
+			},
+			components:{
+				tem
+			}
+		})
+	</script>
+</html>

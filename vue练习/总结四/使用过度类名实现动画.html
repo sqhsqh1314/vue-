@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+		<style>
+			
+			.v-enter,
+			.v-leave-to{
+				
+				transform: translateX(10px);
+				opacity: 0;
+				
+			}
+			.v-enter-active, .v-leave-active
+			{
+				
+				transition: all 0.3s ease;
+			}
+			/*.v-enter-active, .v-leave-active {
+					  transition: all .3s ease;
+					}
+					 /*{
+					  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+					}*/
+					/*.v-enter, .v-leave-to
+					   {
+					  transform: translateX(10px);
+					  opacity: 0;*/
+					/*}*/
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<input type="button" value="点击" @click="flag=!flag" />
+			<transition>
+				<h3 v-if="flag">这是131</h3>
+			</transition>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:".div1",
+			data: {
+				flag:true
+								
+			}
+			
+		})
+		
+	</script>
+</html>

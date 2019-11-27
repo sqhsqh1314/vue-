@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+			<comm></comm>
+			<com-md></com-md>
+			
+		</div>
+		<template id="divv">
+			<div>
+				<h3>点击登录</h3>
+				<p>努力悬系学习</p>
+			</div>
+			 
+		</template>
+	</body>
+	<script>
+		//使用vue.extend来创建全局组件
+//		var com=Vue.extend({
+//			template:'<h1>afafjafj</h1>'
+//		})
+//		Vue.component('comm',com);
+//简写
+//      Vue.component('comMd',Vue.extend({
+//      	template:'<h1>afafjafj1</h1>'
+//      }))
+        //第二种方式
+        Vue.component('comMd',Vue.extend({
+        	template:'#divv'
+        }))
+        
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				
+			}
+			
+			
+		})
+	</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<title></title>
+		<style>
+			#div1 p{
+				height: 30px;
+				font-size: 25px;
+				
+				background: #ADADAD;
+				
+			}
+			span{
+			float: right;
+			}
+		</style>
+	</head>
+	<body>		 
+		  <div id="div1">
+		  	<conn @fun="loadComment"></conn>
+		  	<p v-for="item in list" :key=item.id>{{item.content}}<span class="label label-default">{{item.name}}</span></p>
+		  </div>
+		  <template id="divv">
+		  	<div>
+			 <div class="form-group">
+				    <label for="e1">评论人</label>
+				    <input type="email" class="form-control" id="e1" placeholder="Email" v-model="name">
+				  </div>
+				  <div class="form-group">
+				    <label for="Password1">评论内容</label>
+				    <input type="text" class="form-control panel-primary" id="Password" placeholder="Password" v-model="content">
+				    </div>
+				    <input type="button" class=" btn btn-primary btn-sm" value="提交" @click="tijiao"/>	
+		           
+		     </div>
+		</template>
+		 
+	</body>
+	<script>
+		var conn={
+			template:"#divv",
+			data(){
+				return {
+					name:'',
+					content:''
+					
+				}
+				
+			},
+			methods:{
+				tijiao(){
+					var comment={id:Date.now(),name:this.name,content:this.content}
+					var list1=JSON.parse(localStorage.getItem('list')||'[]')
+					list1.unshift(comment)
+					localStorage.setItem('list',JSON.stringify(list1))
+					this.name=this.content=''
+					this.$emit('fun',)
+				}
+			}
+		}
+		var vm=new Vue({
+			el:"#div1",
+			data:{
+				list:[
+				{id:1,name:"小李",content:"点击登录实现祖册条状"},
+				{id:2,name:"小李2",content:"点击登录实现祖册条状2"},
+				{id:3,name:"小李3",content:"点击登录实现祖册条状3"},
+				{id:4,name:"小李4",content:"点击登录实现祖册条状4"},
+				{id:5,name:"小李5",content:"点击登录实现祖册条状5"}				
+				]
+				
+			},
+			created(){
+				this.loadComment()
+			},
+			methods:{
+				loadComment(){
+					var listt=JSON.parse(localStorage.getItem('list')||'[]')
+					this.list=listt
+				}
+				
+			},
+			components:{
+				conn
+			}
+		})
+		
+	</script>
+</html>

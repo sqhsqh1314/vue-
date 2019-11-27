@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+		<input type="button" value="开始" @click="start" />
+		<input type="button" value="停止" @click="stop" /><br />
+		<p v-text="msg"></p>		
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				msg:"快乐的跑马灯啦啦啦",
+				intervalid:null
+			},
+			methods:{
+				start(){
+					//不使用箭头函数
+//					var _this=this;
+//					setInterval(function(){
+//					var start1=_this.msg.substring(0,1);
+//					var end=_this.msg.substring(1);
+//					_this.msg=end+start1;	
+//					},400)
+					//使用箭头函数
+					if(this.intervalid!=null) return;
+					this.intervalid=setInterval(()=>{
+						var start1=this.msg.substring(0,1);
+						var end=this.msg.substring(1);
+						this.msg=end+start1;						
+					},400)					
+				},
+				stop(){
+					clearInterval(this.intervalid);
+					this.intervalid=null;
+					
+				}
+				
+			}
+			
+		})
+	</script>
+</html>

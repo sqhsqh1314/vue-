@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<style>
+			#app{
+				width: 200px;
+				height: 200px;
+				/*background: red;*/
+			}
+		</style>
+		
+	</head>
+	<body>
+			
+		
+		<div id="app">
+            <a href="http://www.baidu.com" @click.prevent="link">百度一下，你就完了</a>
+			<!--<input type="button" value="点击" @click.stop="shou"/>-->
+			
+		</div>
+		
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			
+			data:{
+				msg:'adahdadjfaj'
+			},
+			methods:{
+				
+			}
+		})
+		
+		
+	</script>
+</html>

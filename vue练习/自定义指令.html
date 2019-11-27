@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>请输入要搜索的名字<input type="text" v-focus v-color/></p>
+			<p>请输入要搜索的名字111<input type="text" v-focus v-color1="'blue'"/></p>
+			
+			
+		</div>
+		
+	</body>
+	<script>
+		
+		
+		Vue.directive('focus',{
+			bind:function (el,binding){
+				
+				
+				
+			},
+			inserted:function (el){
+				el.focus();
+				
+			},
+			updated:function (el){
+				
+			}
+			
+			
+		})
+		
+		Vue.directive('color',{
+			bind:function (el){
+				el.style.color='red'
+				
+				
+			},
+			inserted:function (el){
+				el.focus();
+				
+			},
+			updated:function (el){
+				
+			}
+			
+			
+		})
+		//bing传值
+			Vue.directive('color1',{
+			bind:function (el,binding){
+				el.style.color=binding.value
+				
+				
+			},
+			inserted:function (el){
+				el.focus();
+				
+			},
+			updated:function (el){
+				
+			}
+			
+			
+		})
+		var vm=new Vue({
+			el:'#app',
+			methods:{
+				
+			}
+		})
+		
+	</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{dt|siyou('yyyy-mm-dd')}}</p>
+			
+		</div>
+		
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				dt : new Date()
+				
+				
+			},
+			methods:{
+				
+			},
+			filters:{
+				siyou:function(datastr,patern=''){
+				var data1=new Date(datastr);
+				var y=data1.getFullYear();
+				var m=(data1.getMonth()+1).toString().padStart(2,'0');
+				var d=data1.getDate().toString().padStart(2,'0');
+//				console.log(y);
+//				console.log(m);
+//				console.log(d);
+				if(patern.toLowerCase()==='yyyy-mm-dd'){
+					//这里的标志符号不是用字符串带的单引号，而是用esc下面的符号
+					return `${y}-${m}-${d}`
+				}else{
+					var hh=data1.getHours().toString().padStart(2,'0');
+					var mm=data1.getMinutes().toString().padStart(2,'0');
+					var ss=data1.getSeconds().toString().padStart(2,'0');
+					return `${y}-${m}-${d}  ${hh}-${mm}-${ss}~~~~`
+					
+					
+					
+				}
+				
+					
+					
+					
+				}
+			}
+		});
+		
+	</script>
+</html>

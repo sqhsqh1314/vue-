@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="n1" />
+			<select v-model="opt">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+			<input type="text" v-model="n2" />
+			<input type="button" value="=" @click="calc"/>
+			<input type="text" v-model="n3" />
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				msg:'天青色等烟雨而我在等你',
+				n1:'',
+				n2:'',
+				n3:'',
+				opt:'+'
+				
+				
+			},
+			methods:{
+				calc(){
+//					switch(this.opt)
+//					{
+//						case '+':
+//						this.n3=parseInt(this.n1)+parseInt(this.n2)
+//						break;
+//						case '-':
+//						this.n3=parseInt(this.n1)-parseInt(this.n2)
+//						break;
+//						case '*':
+//						this.n3=parseInt(this.n1)*parseInt(this.n2)
+//						break;
+//						case '/':
+//						this.n3=parseInt(this.n1)/parseInt(this.n2)
+//						break;
+//						
+//					}
+//通过eval函数（不建议）
+                 var result='parseInt(this.n1)'+this.opt+'parseInt(this.n2)'
+                 this.n3=eval(result)
+
+				}
+				
+			}
+		})
+		
+	</script>
+</html>

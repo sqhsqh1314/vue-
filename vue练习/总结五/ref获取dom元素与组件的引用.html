@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+			<input type="button" value="获取点击事件" @click="getElement" ref="myinput"/>
+			<com ref="comref"></com>
+			
+		</div>
+		<template id="divv">
+			<div>
+				<h1>sfsfhsajajk</h1>
+				<p>好好学习，天天向上</p>
+			</div>
+		</template>
+	</body>
+	<script>
+		var com={
+			template:"#divv",
+			data(){
+				return {
+					msg:"son son"
+				}
+				
+			}
+		}
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				
+			},
+			methods:{
+				getElement(){
+					console.log(this.$refs.comref.msg)
+					
+					
+				}
+				
+				
+				
+			},
+			components:{
+				com
+			}
+			
+		})
+	</script>
+</html>

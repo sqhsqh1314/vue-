@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+			<mylogin></mylogin>
+				
+		</div>
+		<template id="com">
+			<h1>242424</h1>
+			
+		</template>
+	</body>
+	<script>
+		var conpent={
+//			template:"<h1>点击按钮实现是舒服213舒服</h1>"
+			template:"#com"
+		}
+		Vue.component('mylogin',conpent)
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				
+			}
+		})
+		
+	</script>
+</html>

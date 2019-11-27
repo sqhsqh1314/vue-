@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<style>
+			.color1{
+				color: red;
+			}
+			.ziti{
+				font: "微软雅黑";
+			}
+			.daxiso{
+				font-size: 80px;
+			}
+			
+		</style>
+		<title></title>
+		
+	</head>
+	<body>
+		<div id="div1">
+			<!--<h1 :class="['color1','ziti']">你好啊！我是不是你最疼爱的人啊</h1>-->
+			<!--使用三元运算符形式-->
+			<h1 :class="['color1','ziti',flag?'daxiso':'']">qwrafaf</h1>
+			<!--
+            	作者：2761726520@qq.com
+            	时间：2019-08-04
+            	描述：通过对象来代替三元表达式提高代码的可读性
+            -->
+            <h1 :class="['color1','ziti',{'daxiso':flag}]">afafafaf</h1>
+		</div>
+		
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#div1',
+			data:{
+				flag:false
+				
+			}
+			
+			
+		});
+		</script>
+	
+	
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+		<p v-if="flag">阿达</p>
+		<p v-show="flage">阿达阿发发法法</p>
+		</div>
+		
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'.div1',
+			data:{
+				flag:false,
+				flage:true
+				
+			}
+		})
+		
+	</script>
+</html>

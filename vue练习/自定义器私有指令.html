@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+	</head>
+	<body>
+		<div id="app">
+			<p><input v-fontw="'30px'" v-color="'red'"></p>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			directives:{
+				'fontw':{
+					bind:function (el,bb){
+						el.style.fontSize=bb.value					
+				}
+				},
+				//第二种写法
+				'color':function (el,aa){
+					el.style.color=aa.value
+					
+				}
+			}
+			
+		})
+	</script>
+</html>

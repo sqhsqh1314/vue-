@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+	</head>
+	<body>
+		<!--<input type="button" value="点击" v-on:click="show" id="app"/>-->
+		<input type="button" value="点击" @click="show" id="app"/>
+
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					msg:'添加点击按钮'
+				},
+				methods:{
+//					show:function(){
+//						alert("afafaf");
+//						
+//					}
+                   show(){
+                       	alert("afafaf");
+                       }
+				}
+			
+			})
+		</script>
+	</body>
+</html>
